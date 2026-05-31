@@ -1,0 +1,9 @@
+---
+const { q } = Astro.props;
+---
+<div class="rounded-2xl border border-slate-800 bg-slate-900/25 p-5">
+  <h3 class="font-semibold text-slate-100 mb-2">Q: {q}</h3>
+  <div class="text-slate-300 leading-relaxed">
+    <slot />
+  </div>
+</div>

@@ -1,0 +1,365 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FAQ from "../components/FAQ.astro";
+
+const apps = [
+  { id: "solar-path", name: "Solar Path" },
+  { id: "moon-path", name: "Moon Path" },
+  { id: "night-nav", name: "Night Nav" },
+  { id: "magnetic-variation", name: "Magnetic Variation" },
+  { id: "british-grid", name: "British Grid Converter" },
+  { id: "sun-moon", name: "Sun & Moon" },
+];
+---
+
+<BaseLayout title="Support – NavApps">
+<a id="top"></a>
+  <main class="max-w-4xl mx-auto px-6 py-16">
+    <!-- Header -->
+    <header class="mb-10 text-center">
+      <h1 class="text-4xl font-bold text-yellow-400 mb-3">Support</h1>
+      <p class="text-slate-300 max-w-2xl mx-auto">
+        Help, questions, and support for NavApps Apple Watch applications.
+      </p>
+    </header>
+
+    <!-- Contact -->
+    <section class="mb-10 rounded-2xl border border-slate-800 bg-slate-900/30 p-6">
+      <h2 class="text-xl font-semibold mb-2">Contact</h2>
+      <p class="text-slate-300 mb-3">
+        For questions, feedback, or bug reports, email:
+      </p>
+      <p class="text-slate-200">
+        📧 <strong>Email:</strong>
+        <a class="text-yellow-400 hover:underline" href="mailto:support@navapps.org">
+          support@navapps.org
+        </a>
+      </p>
+      <p class="text-sm text-slate-400 mt-3">
+        Tip: include the app name, your Watch model, and watchOS version.
+      </p>
+    </section>
+
+
+    <!-- SOLAR PATH -->
+    <section id="solar-path" class="scroll-mt-24 mb-14">
+      <div class="flex items-baseline justify-between gap-4 mb-5">
+        <h2 class="text-2xl font-semibold">Solar Path</h2>
+        <a href="#top" class="text-sm text-slate-400 hover:text-slate-200">Back to top</a>
+      </div>
+
+      <div class="space-y-6 text-slate-300">
+        <FAQ q="What is an azimuth?">
+          The Sun’s azimuth is the compass direction along the horizon from which the sunlight is
+          coming, measured in degrees clockwise from true north. For example, 90° means the Sun is
+          directly east and 180° means it is directly south. If the Sun’s azimuth is 135°, the Sun
+          is located south-east of you.
+        </FAQ>
+
+        <FAQ q="Why is the azimuth off by a few degrees?">
+          Estimated accuracy is within a few degrees and minutes. Because the app is lightweight and
+          designed to work offline, results may differ slightly from web-based calculators. It is
+          accurate for practical outdoor navigation. Minor variations can occur due to device
+          sensors, GPS accuracy, or local atmospheric conditions.
+        </FAQ>
+
+        <FAQ q="Can I use the app offline?">
+          Yes. The app uses the watch’s GPS and on-device calculations and does not require an
+          internet connection for accurate results.
+        </FAQ>
+
+        <FAQ q="What time zone does the app use?">
+          All times are displayed in your current local time zone.
+        </FAQ>
+
+        <FAQ q="How do I use the shadow value?">
+          The shadow azimuth is the reverse (reciprocal) of the Sun’s azimuth. It can be used
+          instead of looking directly at the Sun, which is safer for your eyes. Use a vertical stick
+          to cast a clear shadow — or use your own shadow — to orient yourself.
+        </FAQ>
+
+        <FAQ q="How is the Sun’s altitude measured?">
+          The altitude shown is the angle to the centre of the Sun (not the upper or lower limb).
+          The Sun reaches its highest altitude at Solar Noon, after which it begins its descent.
+        </FAQ>
+
+        <FAQ q="What is Solar Noon?">
+          Solar noon is when the Sun reaches its highest point in the sky. It varies with longitude
+          and the equation of time (Earth’s elliptical orbit and axial tilt). At solar noon, the Sun
+          is due south (azimuth 180°) in the Northern Hemisphere and due north (azimuth 0°) in the
+          Southern Hemisphere.
+        </FAQ>
+
+        <FAQ q='What is the "Left is Less" rule?'>
+          When you turn left, your bearing decreases — you move counter-clockwise on the compass
+          scale. Example: to move from 060° to 030°, turn left by 30°. Use it to decide which way to
+          turn when adjusting direction.
+        </FAQ>
+
+        <FAQ q="Any recommended reference websites?">
+          Authoritative references include the Time and Date website and the NOAA Solar Calculator.
+          Both provide comprehensive solar data.
+        </FAQ>
+      </div>
+    </section>
+
+    <!-- MOON PATH -->
+    <section id="moon-path" class="scroll-mt-24 mb-14">
+      <div class="flex items-baseline justify-between gap-4 mb-5">
+        <h2 class="text-2xl font-semibold">Moon Path</h2>
+        <a href="#top" class="text-sm text-slate-400 hover:text-slate-200">Back to top</a>
+      </div>
+
+      <div class="space-y-6 text-slate-300">
+        <FAQ q="What do azimuth and altitude mean for the Moon?">
+          Azimuth is the compass direction to the Moon along the horizon (0–360°). Altitude is how
+          high it is above the horizon (0° at the horizon, 90° overhead).
+        </FAQ>
+
+        <FAQ q="Can I use Moon Path offline?">
+          Yes. The app is designed to work without internet; it uses on-device calculations and your
+          watch’s location.
+        </FAQ>
+
+        <FAQ q="Why does moonrise/set vary from other sources?">
+          Moonrise/set times can vary slightly between sources due to different algorithms, horizon
+          assumptions, and refraction models. Local terrain and buildings also affect real-world
+          visibility.
+        </FAQ>
+
+        <FAQ q="What time zone does the app use?">
+          All times are displayed in your current local time zone.
+        </FAQ>
+      </div>
+    </section>
+
+    <!-- NIGHT NAV -->
+    <section id="night-nav" class="scroll-mt-24 mb-14">
+      <div class="flex items-baseline justify-between gap-4 mb-5">
+        <h2 class="text-2xl font-semibold">Night Nav</h2>
+        <a href="#top" class="text-sm text-slate-400 hover:text-slate-200">Back to top</a>
+      </div>
+
+      <div class="space-y-6 text-slate-300">
+      
+        <FAQ q="How can I use this for night navigation">
+        During the day the sun and if visible the moon can be used to provide a true bearing to enable the user to orientate themselves, calibrate their magnetic compass and determine where north is. 
+        At night the moon might be available. The five planets and the twenty stars have been picked to ensure the user has a choice of objects across the night sky so that they can orientate themselves. 
+        Its best to get to know 
+        </FAQ>
+        
+         <FAQ q="Whats the best way to use this app">
+          The tab titled "Locate" lists all the twenty stars and the five planets that are considered useful for night time navigation. 
+          Each objects is described to included what constellation they may be part of; their true and magnetic bearing; their azimuth
+          and altitude. 
+          Meridian passage is the time that the object crosses your longitude - in other words the object will be due South of your position at that time. 
+          A horizon indicator shows if the object is below or above your horizon. 
+          Use the Wheel to move through the list of objects.
+          The tab titled "Heading" shows your current heading and any objects that might be near your bearing. This enables the user to pan along the horizon and see which
+          objects might be suitable. Each object's azimuth and altitude is shown with a green or red arrow (with degrees of turn) to how best to align themselves.
+        </FAQ>
+      
+        <FAQ q="How does the heading shortlist work?">
+          The app compares your live compass heading with the azimuth of selected bright stars and shows the
+          closest matches within a tolerance. If you turn, the shortlist updates. Twenty stars are selected for their brightness, altitude in the night sky and to ensure all 4 quarters of the night sky are included.
+          Five planets can also be manually viewed selected based on their practical utility. The user will quickly become more familiar with their night sky.
+        </FAQ>
+
+        <FAQ q="Why do I sometimes see only one or two stars?">
+          The shortlist depends on what is above the horizon, your location, and the current time.
+          In twilight, haze, or light pollution, only the brightest stars may be visible. The user must estimate the altitude of the star in order to determine which star is likely. 
+        </FAQ>
+
+        <FAQ q="Any practical tips for learning the stars?">
+          Start with a few bright “anchor” stars (e.g., Polaris, Vega, Capella) and learn their
+          relative positions. Use the app to confirm direction, then look for patterns (triangles,
+          lines, and constellations). Practice over a couple of nights to become familiar with their own night sky.
+        </FAQ>
+        
+        <FAQ q="What about the Moon?">
+          The moon's movement is included in another app - "Sun and Moon". That app comprehensively details the movements of both Sun and Moon.
+        Another app - "Moon Phases" details the 4 phases of the moon and may be useful.
+        </FAQ>
+        
+        
+        </div>
+    </section>
+
+    <!-- MAGNETIC VARIATION -->
+    <section id="magnetic-variation" class="scroll-mt-24 mb-14">
+      <div class="flex items-baseline justify-between gap-4 mb-5">
+        <h2 class="text-2xl font-semibold">TrueMag</h2>
+        <a href="#top" class="text-sm text-slate-400 hover:text-slate-200">Back to top</a>
+      </div>
+
+      <div class="space-y-6 text-slate-300">
+      
+        <FAQ q="What model and data is used for this estimated value?">
+        This app uses the World Magnetic Model (WMM), a global scientific model that estimates magnetic variation from your GPS location and date. It does not measure magnetism directly.<span style="color: orange;"><br>The current version (WMM2025) was released on December 17, 2024, and will remain valid until late 2029.</span><br>
+         The model is produced by the United States’ National Geospatial-Intelligence Agency (NGA) and the United Kingdom’s Defence Geographic Centre (DGC). NCEI and the British Geological Survey (BGS).
+         <br> All data is stored internally on the watch so no internet connection is required.
+        </FAQ>
+        
+        <FAQ q="What is magnetic variation or declination?">
+          Magnetic variation is the difference between true north (geographic) and magnetic north
+          (what a compass points to). It varies by location and slowly changes over time.
+          In practice declination and variation mean the same - 
+          the first term being a more technical one while the second is a more traditional navigational term.
+          Both mean: the angle between True North and Magnetic North at your location.
+        </FAQ>
+
+        <FAQ q="How do I apply variation to a bearing?">
+           Decide whether you’re working with a map bearing (True) or a compass bearing (Magnetic). Then convert consistently.<br><br>
+           True → Magnetic: subtract easterly variation, add westerly variation.<br>
+            Magnetic → True: add easterly variation, subtract westerly variation.
+        </FAQ>
+
+        <FAQ q="Does it work offline?">
+          Yes. The app is designed to work just with a GPS location. All calculations are internal to the app. To refresh tap the app's title - 
+          <span style="color: orange;">WMM Variation</span>
+         and this will force a gps location update and recalculation. Note that this action updates the date and time fields.
+        </FAQ>
+        
+        <FAQ q="Does it adjust for Altitude or Height?">
+            Altitude has only a small effect on magnetic variation, so this app ignores altitude for simplicity.
+           It only becomes noticeable if you’re at aircraft cruising altitude, very high mountains (still usually a small difference) or doing high-precision surveying.
+        </FAQ>
+        
+        <FAQ q="How accurate is the app?">
+          The app is made to assist outdoors users in normal field navigation. It is not intended for professional users of such models. 
+          Such users should refer instead to authoritative sources.
+         You can cross-check values using authoritative sources:
+         <br><br>
+         NOAA NCEI (WMM2025):
+         <a href="https://www.ncei.noaa.gov/products/world-magnetic-model" target="_blank" rel="noopener">
+         https://www.ncei.noaa.gov/products/world-magnetic-model
+        </a>
+         <br>
+         British Geological Survey (BGS):
+        <a href="https://geomag.bgs.ac.uk/data_service/models_compass/home.html" target="_blank" rel="noopener">
+        https://geomag.bgs.ac.uk/data_service/models_compass/home.html
+        </a>
+      <br><br>
+        </FAQ>
+        
+
+      </div>
+    </section>
+
+    <!-- British National Grid -->
+    <section id="british-grid" class="scroll-mt-24 mb-14">
+      <div class="flex items-baseline justify-between gap-4 mb-5">
+        <h2 class="text-2xl font-semibold">British National Grid</h2>
+        <a href="#top" class="text-sm text-slate-400 hover:text-slate-200">Back to top</a>
+      </div>
+
+      <div class="space-y-6 text-slate-300">
+        <FAQ q="What does this app do?">
+          It converts a standard GPS latitude/longitude into British National Grid (OSGB /
+          BNG) format. This is the standard for GB mapping and used by emergency responders. </br>
+          The British National Grid applies to England, Scotland and Wales. A warning is displayed if outside of this area.
+          Northern Ireland uses its own Irish Grid system.
+        </FAQ>
+
+        <FAQ q="Why use the 6 digit BNG reference?">
+          Modern devices can display British National Grid format in 6, 8 or 10 digits. </br>
+          For comparison:</br>
+          6 digits = 100 m x 100 m square accuracy</br>
+          8 digits = 10 m x 10 m square accuracy</br>
+         10 digits = 1 m x 1m square accuracy</br>
+          The 6 digit format is still considered the preferred standard. </br>
+          This is easier to communicate in difficult outdoors conditions ie weather and mobile phone reception.
+          It locates the user within a 100 metre square box considered the optimum practical search area for responders.</br>
+         <span style="color: orange;">Note - Use the 6 digit display for most practical needs ie map location and emergencies.</span>
+        </FAQ>
+
+        <FAQ q="What are the other formats shown?">
+          A 10 and 6 digit BNG reference is displayed.</br>
+          The GPS Latitude and Longitude is displayed as Decimal Degrees (a format widely used on websites). </br>
+          In addition the more traditional format Degrees/Minutes/Seconds is shown - widely used in maritime arenas.</br>
+          If you are outside Great Britain the BNG references will not be available but you can still use the other GPS formats.
+        </FAQ>
+
+        <FAQ q="Does it need internet?">
+          No. It is designed for field use without an internet connection. Relies on internal watch GPS reception.
+        </FAQ>
+        
+         <FAQ q="How do I refresh the location?">
+          <span style="color: orange;">Tap on the app title </span> to refresh the internal GPS location. This will refresh all the various references and formats. 
+          Note that the date and time will momentarily turn green to indicate a refresh. The date and time indicates the last refresh moment.
+        </FAQ>
+        
+        <FAQ q="How do I use this information in an emergency?">
+        The Emergency tab shows a brief aide-memoire. Note your 6 digit BNG reference and slowly and clearly relay that information to the emergency services.
+        Remember the full reference is the 2 character Map reference and then the 6 digits information. </br>
+        How to say it in an emergency.</br>
+        Say it like this:</br>
+         “N Y … one two three … four five six.”</br>
+         What it means (simple)</br>
+         NY = the big map square you are in</br>
+         123 = how far across (left to right)</br>
+         456 = how far up (bottom to top)</br>
+        This is what these services are expecting to receive. </br>
+        </FAQ>
+      </div>
+    </section>
+
+    <!-- SUN & MOON -->
+    <section id="sun-moon" class="scroll-mt-24 mb-14">
+      <div class="flex items-baseline justify-between gap-4 mb-5">
+        <h2 class="text-2xl font-semibold">Sun & Moon</h2>
+        <a href="#top" class="text-sm text-slate-400 hover:text-slate-200">Back to top</a>
+      </div>
+
+      <div class="space-y-6 text-slate-300">
+        <FAQ q="What is the purpose of Sun & Moon?">
+          It shows the movements of both the sun and moon together with very detailed information about most aspects of their combined travel.
+          Multiple aspects of both sun and moon are included making it a comprehensive reference point.
+          The app can be fully customised including the major overview screen and each tab can be switched on/off for display.
+        </FAQ>
+
+        <FAQ q="How accurate is it?">
+          The app uses the excellent <span style="color: orange;">SunCalc model for its calculations.</span> Considered one of the best models this enables the app to 
+          derive all its data from a single source. The key attributes azimuth and altitude of the sun are very
+          consistent with a few minutes of difference. As the moon is not fully implemented by the underlying model its accuracy is slightly off.
+          However for all practical field navigation purposes it is consistently reliable and accurate.
+        
+        </FAQ>
+
+        <FAQ q="Does it work offline?">
+          Yes. Its design was built to be practical and off grid. No internet connection is required as all calculations and displays are internally derived.
+         A GPS signal is used as the key variable. 
+        </FAQ>
+        
+        <FAQ q="What is different with your other Sun and Moon apps?">
+       The separate Sun and Moon apps were early implementations. They use different methods of calculations and treat each object as a separate entity. In reality there is a very close 
+       relationship between our sun and our moon phases and visibility. This is explored more deeply in this combined app so that the user can more easily begin to understand their symmetry.
+       For field navigation purposes the sun is still the primary object but if the moon is visible during day light it can be used as a cross reference to aid the users orientation. 
+        </FAQ>
+        
+        <FAQ q="How do I compare with authoritiave sources?">
+      The internet has many such sources. <br>
+      The US Naval Observatory at https://aa.usno.navy.mil/data/ is widely regarded for astronomical accuracy worldwide. 
+      The NOAA Solar Position Calculator is widely used available at https://gml.noaa.gov/grad/solcalc/azel.html.
+      The popular website www.timeanddate.com is also widely regarded by the general public, especially for its ease of use and graphic displays.
+        </FAQ>
+        </div>
+    </section>
+
+    <!-- Privacy -->
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold mb-3">Privacy</h2>
+      <p class="text-slate-300">
+        Location data is used only for on-device calculations and is not collected or stored
+        externally. Each app includes its own privacy policy.
+      </p>
+    </section>
+
+    <footer class="text-center text-sm text-slate-500">
+      © 2025 NavApps ·
+      <a class="hover:text-slate-300 underline" href="mailto:support@navapps.org">
+        support@navapps.org
+      </a>
+    </footer>
+  </main>
+</BaseLayout>

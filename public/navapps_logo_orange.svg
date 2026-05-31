@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+  <defs>
+    <style>
+      .bg { fill: #030303; }
+      .white { fill: none; stroke: #f7f7f2; stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+      .orange { fill: none; stroke: #ff9500; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+      .orangeFill { fill: #ff9500; }
+      .whiteFill { fill: #f7f7f2; }
+      .word { font-family: Avenir Next, Helvetica Neue, Arial, sans-serif; font-weight: 300; letter-spacing: 32px; }
+      .tag { font-family: Avenir Next, Helvetica Neue, Arial, sans-serif; font-weight: 600; letter-spacing: 14px; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="1200"/>
+
+  <!-- Compass / landscape mark -->
+  <g transform="translate(600 455)">
+    <!-- N letter -->
+    <text x="0" y="-300" text-anchor="middle" class="orangeFill" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-weight="800" font-size="70">N</text>
+
+    <!-- outer ring -->
+    <circle r="285" class="white"/>
+
+    <!-- tick marks -->
+    <g class="white">
+      <line x1="0" y1="252" x2="0" y2="285"/>
+      <line x1="252" y1="0" x2="285" y2="0"/>
+      <line x1="-252" y1="0" x2="-285" y2="0"/>
+      <line x1="-178" y1="-178" x2="-205" y2="-205"/>
+      <line x1="178" y1="-178" x2="205" y2="-205"/>
+      <line x1="-178" y1="178" x2="-205" y2="205"/>
+      <line x1="178" y1="178" x2="205" y2="205"/>
+    </g>
+
+    <!-- north pointer -->
+    <path class="orangeFill" d="M 0 -278 L 18 -120 L 0 -75 L -18 -120 Z"/>
+
+    <!-- orange sun arc -->
+    <path class="orange" d="M -178 18 A 180 180 0 0 1 178 18"/>
+
+    <!-- mountain line -->
+    <path class="white" d="M -240 70 C -175 45 -115 42 -55 20 C -25 7 -7 -32 25 -48 C 48 -62 75 -15 105 -10 C 150 0 184 45 245 62"/>
+
+    <!-- path / river -->
+    <path class="white" d="M -42 92 C 30 90 80 92 86 106 C 92 122 20 124 -18 145 C -56 166 -14 194 38 212 C 91 232 104 266 80 297 C 55 330 12 347 -18 374"/>
+  </g>
+
+  <!-- NAVAPPS wordmark: split so APPS can be orange -->
+  <g font-size="125" class="word" dominant-baseline="middle">
+    <text x="150" y="840" class="whiteFill">NAV</text>
+    <text x="555" y="840" class="orangeFill">APPS</text>
+  </g>
+
+  <!-- tagline and rules -->
+  <g transform="translate(600 1010)">
+    <line x1="-440" y1="0" x2="-360" y2="0" stroke="#ff9500" stroke-width="6" stroke-linecap="round"/>
+    <line x1="360" y1="0" x2="440" y2="0" stroke="#ff9500" stroke-width="6" stroke-linecap="round"/>
+    <text x="0" y="7" text-anchor="middle" class="whiteFill tag" font-size="32">FIELD TOOLS FOR APPLE WATCH</text>
+  </g>
+</svg>
