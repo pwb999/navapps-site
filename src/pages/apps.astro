@@ -3,18 +3,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const apps = [
   {
-    name: "Arcus Solis -  Solar Path",
+    name: "Arcus Solis - Solar Path",
     status: "Live",
-    tagline: "Simply the Sun azimuth, altitude with solar noon,rise/sun and set times — just the essentials",
+    tagline: "Simply the Sun azimuth, altitude with solar noon, rise and set times — just the essentials",
     bullets: ["Sun path visualisation", "Azimuth + altitude", "Sunrise/sunset azimuths"],
     href: "https://apps.apple.com/no/app/arcus-solis/id6759111095",
-    icon: "/icons/arcus-solis.png",
+    icon: "/navapps-site/icons/arcus-solis.png",
   },
   {
     name: "Arcus Lunae - Moon Path",
     status: "Live",
     tagline: "Moonrise/set, phase, illumination, and the Moon’s track across the sky.",
-    bullets: ["altitude and azimuth", "Phase + illumination", "Rise/set + timing"],
+    bullets: ["Altitude and azimuth", "Phase + illumination", "Rise/set + timing"],
     href: "https://apps.apple.com/pl/app/arcus-lunae/id6747908818",
     icon: "🌙",
   },
@@ -38,7 +38,7 @@ const apps = [
     name: "Solar Noon",
     status: "Live",
     tagline: "Calculates your Local Solar Noon time.",
-    bullets: ["Max Altitude of Sun", "Longitude", "Find your Latitude"],
+    bullets: ["Max altitude of Sun", "Longitude", "Find your latitude"],
     href: "https://apps.apple.com/no/app/solar-noon/id6749851131",
     icon: "🗺️",
   },
@@ -53,15 +53,15 @@ const apps = [
   {
     name: "Sun Azimuths",
     status: "Live",
-    tagline: "Create a Table of Sun Azimuths for Each Hour before and after Local Solar Noon.",
-    bullets: ["Sun Azimuths", "Gatty", "Completely Offline"],
+    tagline: "Create a table of Sun azimuths for each hour before and after Local Solar Noon.",
+    bullets: ["Sun azimuths", "Gatty", "Completely offline"],
     href: "https://apps.apple.com/no/app/sun-azimuths/id6753765101",
     icon: "🪐",
   },
   {
-    name: "Moon calendar",
+    name: "Moon Calendar",
     status: "Live",
-    tagline: "All the phases of the Moon worldwide",
+    tagline: "All the phases of the Moon worldwide.",
     bullets: ["Moon", "Global", "Phases"],
     href: "https://apps.apple.com/no/app/moon-calendar/id6753690599",
     icon: "⏱️",
@@ -70,41 +70,34 @@ const apps = [
 
 const live = apps.filter((a) => a.status === "Live");
 const soon = apps.filter((a) => a.status !== "Live");
+
+const isImageIcon = (icon) => icon.startsWith("/");
 ---
 
 <BaseLayout title="Field Tools for Apple Watch">
-<main class="max-w-6xl mx-auto px-6 pt-8 pb-14">
-<header class="text-center mb-12 pt-4">
+  <main class="max-w-6xl mx-auto px-6 pt-8 pb-14">
+    <header class="text-center mb-12 pt-4">
+      <div class="mb-8">
+        <img
+          src="/navapps-site/navappsLogo.png"
+          alt="NavApps Logo"
+          class="mx-auto w-80 sm:w-96 md:w-[460px] h-auto"
+        />
+      </div>
 
-  <div class="mb-8">
+      <p class="text-slate-300 text-lg max-w-3xl mx-auto leading-relaxed">
+        Practical outdoor navigation tools designed specifically for Apple Watch.
+        <br />
+        Built for clarity, accuracy and ease of use in the field.
+      </p>
+    </header>
 
-    <img
-
-      src="/navapps-site/navappsLogo.png"
-
-      alt="NavApps Logo"
-
-      class="mx-auto w-80 sm:w-96 md:w-[460px] h-auto"
-
-    />
-
-  </div>
-
-  <p class="text-slate-300 text-lg max-w-3xl mx-auto leading-relaxed">
-
-    Practical outdoor navigation tools designed specifically for Apple Watch.
-
-    <br />
-
-    Built for clarity, accuracy and ease of use in the field.
-
-  </p>
-
-</header>
     <section class="mb-14">
       <div class="flex items-baseline justify-between gap-4 mb-6">
         <h2 class="text-xl font-semibold">Available now</h2>
-        <a href="/" class="text-sm text-slate-400 hover:text-slate-200">Back to home</a>
+        <a href="/navapps-site/" class="text-sm text-slate-400 hover:text-slate-200">
+          Back to home
+        </a>
       </div>
 
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -112,11 +105,22 @@ const soon = apps.filter((a) => a.status !== "Live");
           <article class="group rounded-2xl border border-slate-800 bg-slate-900/40 p-6 shadow-sm hover:border-slate-700 transition">
             <div class="flex items-start justify-between gap-3 mb-4">
               <div class="flex items-center gap-3">
-                <div class="h-11 w-11 grid place-items-center rounded-xl bg-slate-800 text-xl">
-                  {app.icon}
-                </div>
+                {isImageIcon(app.icon) ? (
+                  <div class="h-14 w-14 rounded-2xl overflow-hidden border border-slate-700 shrink-0">
+                    <img
+                      src={app.icon}
+                      alt={app.name}
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div class="h-14 w-14 grid place-items-center rounded-2xl bg-slate-800 text-2xl shrink-0">
+                    {app.icon}
+                  </div>
+                )}
+
                 <div>
-                  <h3 class="text-lg font-semibold">{app.name}</h3>
+                  <h3 class="text-lg font-semibold leading-tight">{app.name}</h3>
                   <p class="text-xs text-slate-400">{app.tagline}</p>
                 </div>
               </div>
@@ -135,13 +139,13 @@ const soon = apps.filter((a) => a.status !== "Live");
               ))}
             </ul>
 
-<div class="flex items-center gap-3">
-  <a
-    href={app.href}
-    class="inline-flex items-center justify-center rounded-xl bg-[#d96a1a] text-white font-semibold px-4 py-2 text-sm hover:bg-[#e07a2f] transition"
-  >
-    View on App Store
-  </a>
+            <div class="flex items-center gap-3">
+              <a
+                href={app.href}
+                class="inline-flex items-center justify-center rounded-xl bg-[#d96a1a] text-white font-semibold px-4 py-2 text-sm hover:bg-[#e07a2f] transition"
+              >
+                View on App Store
+              </a>
 
               <a
                 href="/navapps-site/support"
@@ -163,11 +167,22 @@ const soon = apps.filter((a) => a.status !== "Live");
           <article class="rounded-2xl border border-slate-800 bg-slate-900/20 p-6">
             <div class="flex items-start justify-between gap-3 mb-4">
               <div class="flex items-center gap-3">
-                <div class="h-11 w-11 grid place-items-center rounded-xl bg-slate-800/70 text-xl opacity-90">
-                  {app.icon}
-                </div>
+                {isImageIcon(app.icon) ? (
+                  <div class="h-14 w-14 rounded-2xl overflow-hidden border border-slate-700 shrink-0">
+                    <img
+                      src={app.icon}
+                      alt={app.name}
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div class="h-14 w-14 grid place-items-center rounded-2xl bg-slate-800/70 text-2xl opacity-90 shrink-0">
+                    {app.icon}
+                  </div>
+                )}
+
                 <div>
-                  <h3 class="text-lg font-semibold">{app.name}</h3>
+                  <h3 class="text-lg font-semibold leading-tight">{app.name}</h3>
                   <p class="text-xs text-slate-400">{app.tagline}</p>
                 </div>
               </div>
@@ -191,7 +206,10 @@ const soon = apps.filter((a) => a.status !== "Live");
     </section>
 
     <footer class="mt-16 text-center text-sm text-slate-500">
-      Support: <a class="underline hover:text-slate-300" href="mailto:support@navapps.org">support@navapps.org</a>
+      Support:
+      <a class="underline hover:text-slate-300" href="mailto:support@navapps.org">
+        support@navapps.org
+      </a>
     </footer>
   </main>
 </BaseLayout>
