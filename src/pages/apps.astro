@@ -19,15 +19,15 @@ const apps = [
     icon: "/icons/Arcus-Lunae.png",
   },
   {
-    name: "Night Nav",
-    status: "Coming soon",
+    name: "Astra Noctis",
+    status: "Live",
     tagline: "Learn key stars and use heading-based suggestions for night navigation.",
-    bullets: ["Star shortlist by heading", "Alt/az guidance", "Simple learning flow"],
-    href: "#",
+    bullets: ["Star finding by Heading", "Star Altitude and Azimuths", "Simple learning flow"],
+    href: "https://apps.apple.com/app/astra-noctis/id6752808805",
     icon: "/icons/Astra-Noctis.png",
   },
   {
-    name: "Magnetic Variation",
+    name: "TrueMag",
     status: "Live",
     tagline: "Displays World Magnetic Model declination to convert between true and magnetic bearings.",
     bullets: ["Offline-ready model", "Declination at location", "True ↔︎ magnetic guidance"],
@@ -66,6 +66,14 @@ const apps = [
     href: "https://apps.apple.com/no/app/moon-calendar/id6753690599",
     icon: "/icons/Moon-Calendar.png",
   },
+    {
+    name: "Orbis",
+    status: "Soon",
+    tagline: "Simple compass",
+    bullets: ["True", "Magnetic", "Error Indication"],
+    href: "",
+    icon: "/icons/Orbis.png",
+  },
 ];
 
 const live = apps.filter((a) => a.status === "Live");
@@ -95,7 +103,7 @@ const isImageIcon = (icon) => icon.startsWith("/");
     <section class="mb-14">
       <div class="flex items-baseline justify-between gap-4 mb-6">
         <h2 class="text-xl font-semibold">Available now</h2>
-        <a href="/navapps-site/" class="text-sm text-slate-400 hover:text-slate-200">
+        <a href="/navapps-site/index.html" class="text-sm text-slate-400 hover:text-slate-200">
           Back to home
         </a>
       </div>
